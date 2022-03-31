@@ -4,7 +4,7 @@ import ui
 
 from PyQt5.QtWidgets import *
 from PyQt5 import QtCore, QtGui, QtWidgets
-from qtwidgets import Toggle, AnimatedToggle
+
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 import matplotlib.pyplot as plt
@@ -42,6 +42,18 @@ ui.FirstPay.setText("0")
 ui.procentStav.setText("0")
 ui.Srok.setText("0")
 
+global MorA
+MorA = 1
+
+def mounthORage():
+
+    if ui.comboBox.currentIndex() == 0:
+        MorA = 1
+        ui.horizontalSlider_srok.setMaximum(360)
+    else:
+        MorA = 12
+        ui.horizontalSlider_srok.setMaximum(30)
+    print(MorA)
 
 
 def summaslider():
@@ -57,7 +69,7 @@ def summaslider():
     ui.summa.setText(str(z))
 
 def result():
-                # global procentPart, generalPart
+
     summa = (ui.summa.text())
     summa = int(summa.replace(' ', ''))
 
@@ -69,7 +81,7 @@ def result():
                         # ввод данных
 
             procent = float(ui.procentStav.text())
-            srok = float(ui.Srok.text()) * 12
+            srok = float(ui.Srok.text()) * MorA
 
                         #
             Ostatok = summa - FirstPay
@@ -85,7 +97,7 @@ def result():
 
             # добовляем пробелы в вывод, цикл сделан что бы уменьшить код, он проганяет 3
             # значения по 1 алгаритм отделяния строк
-            # можно было использывать рекурсию, но считаю для 3 значений бесмысленно
+
             m = 0
             list = [everyPay, overPay, total]
             for m in range(3):
@@ -176,8 +188,8 @@ def diagram():
     else:
         QMessageBox.critical(QWidget(), 'Ошибка!', "Введите данные!!!")
 
-
-
+#выбр месяцов или лет
+ui.comboBox.currentIndexChanged.connect(mounthORage)
         #connect
 ui.raschet.clicked.connect(result)
 ui.grafik.clicked.connect(diagram)
