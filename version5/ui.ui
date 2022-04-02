@@ -378,13 +378,14 @@
       </property>
       <property name="font">
        <font>
-        <pointsize>15</pointsize>
+        <family>Nirmala UI</family>
+        <pointsize>13</pointsize>
         <italic>false</italic>
         <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 700 15pt &quot;Nirmala UI&quot;;
+       <string notr="true">font: 700 13pt &quot;Nirmala UI&quot;;
 color : #8e9297;</string>
       </property>
       <property name="text">
@@ -402,13 +403,14 @@ color : #8e9297;</string>
       </property>
       <property name="font">
        <font>
-        <pointsize>15</pointsize>
+        <family>Nirmala UI</family>
+        <pointsize>13</pointsize>
         <italic>false</italic>
         <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 700 15pt &quot;Nirmala UI&quot;;
+       <string notr="true">font: 700 13pt &quot;Nirmala UI&quot;;
 color : #8e9297;</string>
       </property>
       <property name="text">
@@ -426,13 +428,14 @@ color : #8e9297;</string>
       </property>
       <property name="font">
        <font>
-        <pointsize>15</pointsize>
+        <family>Nirmala UI</family>
+        <pointsize>13</pointsize>
         <italic>false</italic>
         <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 700 15pt &quot;Nirmala UI&quot;;
+       <string notr="true">font: 700 13pt &quot;Nirmala UI&quot;;
 color : #8e9297;</string>
       </property>
       <property name="text">
@@ -450,13 +453,14 @@ color : #8e9297;</string>
       </property>
       <property name="font">
        <font>
-        <pointsize>15</pointsize>
+        <family>Nirmala UI</family>
+        <pointsize>13</pointsize>
         <italic>false</italic>
         <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 700 15pt &quot;Nirmala UI&quot;;
+       <string notr="true">font: 700 13pt &quot;Nirmala UI&quot;;
 color : #8e9297;</string>
       </property>
       <property name="text">
@@ -503,7 +507,7 @@ background: #B0AEB1
     <item>
      <widget class="QLabel" name="label_everyPay">
       <property name="styleSheet">
-       <string notr="true">font: 700 15pt &quot;Nirmala UI&quot;;
+       <string notr="true">font: 700 13pt &quot;Nirmala UI&quot;;
 color : #8e9297;</string>
       </property>
       <property name="text">
@@ -545,7 +549,7 @@ color : #8e9297;</string>
     <item>
      <widget class="QLabel" name="label_overpay">
       <property name="styleSheet">
-       <string notr="true">font: 700 15pt &quot;Nirmala UI&quot;;
+       <string notr="true">font: 700 13pt &quot;Nirmala UI&quot;;
 color : #8e9297;</string>
       </property>
       <property name="text">
@@ -583,8 +587,16 @@ color : #8e9297;</string>
     </item>
     <item>
      <widget class="QLabel" name="label_AllPay">
+      <property name="font">
+       <font>
+        <family>Nirmala UI</family>
+        <pointsize>13</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true">font: 700 15pt &quot;Nirmala UI&quot;;
+       <string notr="true">font: 700 13pt &quot;Nirmala UI&quot;;
 color : #8e9297;</string>
       </property>
       <property name="text">
@@ -639,15 +651,24 @@ color : #8e9297;</string>
    </property>
    <property name="font">
     <font>
-     <pointsize>15</pointsize>
+     <pointsize>13</pointsize>
      <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color : #8e9297;</string>
+    <string notr="true">
+QRadioButton{ 
+color: red;
+color : #8e9297;
+border-color: #36393f;
+}
+</string>
    </property>
    <property name="text">
     <string>Аннуитетные</string>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QRadioButton" name="RB_dif">
@@ -661,7 +682,7 @@ color : #8e9297;</string>
    </property>
    <property name="font">
     <font>
-     <pointsize>15</pointsize>
+     <pointsize>13</pointsize>
      <bold>true</bold>
     </font>
    </property>
@@ -677,7 +698,7 @@ color : #8e9297;</string>
     <rect>
      <x>545</x>
      <y>340</y>
-     <width>91</width>
+     <width>121</width>
      <height>30</height>
     </rect>
    </property>
@@ -708,12 +729,12 @@ QComboBox QAbstractItemView {
    </property>
    <item>
     <property name="text">
-     <string>Месяцев</string>
+     <string>Лет</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>Лет</string>
+     <string>Месяцев</string>
     </property>
    </item>
   </widget>
@@ -722,7 +743,7 @@ QComboBox QAbstractItemView {
     <rect>
      <x>20</x>
      <y>10</y>
-     <width>301</width>
+     <width>381</width>
      <height>61</height>
     </rect>
    </property>

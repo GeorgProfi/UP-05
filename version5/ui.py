@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ui.ui'
+# Form implementation generated from reading ui file 'C:\Users\georg\PycharmProjects\pythonProject\version5\ui.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.6
 #
@@ -263,11 +263,12 @@ class Ui_Dialog(object):
         sizePolicy.setHeightForWidth(self.label_Summa.sizePolicy().hasHeightForWidth())
         self.label_Summa.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
-        font.setPointSize(15)
+        font.setFamily("Nirmala UI")
+        font.setPointSize(13)
         font.setBold(True)
         font.setItalic(False)
         self.label_Summa.setFont(font)
-        self.label_Summa.setStyleSheet("font: 700 15pt \"Nirmala UI\";\n"
+        self.label_Summa.setStyleSheet("font: 700 13pt \"Nirmala UI\";\n"
 "color : #8e9297;")
         self.label_Summa.setObjectName("label_Summa")
         self.verticalLayout_2.addWidget(self.label_Summa)
@@ -278,11 +279,12 @@ class Ui_Dialog(object):
         sizePolicy.setHeightForWidth(self.label_prcent.sizePolicy().hasHeightForWidth())
         self.label_prcent.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
-        font.setPointSize(15)
+        font.setFamily("Nirmala UI")
+        font.setPointSize(13)
         font.setBold(True)
         font.setItalic(False)
         self.label_prcent.setFont(font)
-        self.label_prcent.setStyleSheet("font: 700 15pt \"Nirmala UI\";\n"
+        self.label_prcent.setStyleSheet("font: 700 13pt \"Nirmala UI\";\n"
 "color : #8e9297;")
         self.label_prcent.setObjectName("label_prcent")
         self.verticalLayout_2.addWidget(self.label_prcent)
@@ -293,11 +295,12 @@ class Ui_Dialog(object):
         sizePolicy.setHeightForWidth(self.label_srok.sizePolicy().hasHeightForWidth())
         self.label_srok.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
-        font.setPointSize(15)
+        font.setFamily("Nirmala UI")
+        font.setPointSize(13)
         font.setBold(True)
         font.setItalic(False)
         self.label_srok.setFont(font)
-        self.label_srok.setStyleSheet("font: 700 15pt \"Nirmala UI\";\n"
+        self.label_srok.setStyleSheet("font: 700 13pt \"Nirmala UI\";\n"
 "color : #8e9297;")
         self.label_srok.setObjectName("label_srok")
         self.verticalLayout_2.addWidget(self.label_srok)
@@ -308,11 +311,12 @@ class Ui_Dialog(object):
         sizePolicy.setHeightForWidth(self.label_Firstpay.sizePolicy().hasHeightForWidth())
         self.label_Firstpay.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
-        font.setPointSize(15)
+        font.setFamily("Nirmala UI")
+        font.setPointSize(13)
         font.setBold(True)
         font.setItalic(False)
         self.label_Firstpay.setFont(font)
-        self.label_Firstpay.setStyleSheet("font: 700 15pt \"Nirmala UI\";\n"
+        self.label_Firstpay.setStyleSheet("font: 700 13pt \"Nirmala UI\";\n"
 "color : #8e9297;")
         self.label_Firstpay.setObjectName("label_Firstpay")
         self.verticalLayout_2.addWidget(self.label_Firstpay)
@@ -334,7 +338,7 @@ class Ui_Dialog(object):
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.label_everyPay = QtWidgets.QLabel(self.verticalLayoutWidget_2)
-        self.label_everyPay.setStyleSheet("font: 700 15pt \"Nirmala UI\";\n"
+        self.label_everyPay.setStyleSheet("font: 700 13pt \"Nirmala UI\";\n"
 "color : #8e9297;")
         self.label_everyPay.setObjectName("label_everyPay")
         self.verticalLayout_3.addWidget(self.label_everyPay)
@@ -362,7 +366,7 @@ class Ui_Dialog(object):
         self.EveryPay.setObjectName("EveryPay")
         self.verticalLayout_3.addWidget(self.EveryPay)
         self.label_overpay = QtWidgets.QLabel(self.verticalLayoutWidget_2)
-        self.label_overpay.setStyleSheet("font: 700 15pt \"Nirmala UI\";\n"
+        self.label_overpay.setStyleSheet("font: 700 13pt \"Nirmala UI\";\n"
 "color : #8e9297;")
         self.label_overpay.setObjectName("label_overpay")
         self.verticalLayout_3.addWidget(self.label_overpay)
@@ -389,7 +393,13 @@ class Ui_Dialog(object):
         self.overpay.setObjectName("overpay")
         self.verticalLayout_3.addWidget(self.overpay)
         self.label_AllPay = QtWidgets.QLabel(self.verticalLayoutWidget_2)
-        self.label_AllPay.setStyleSheet("font: 700 15pt \"Nirmala UI\";\n"
+        font = QtGui.QFont()
+        font.setFamily("Nirmala UI")
+        font.setPointSize(13)
+        font.setBold(True)
+        font.setItalic(False)
+        self.label_AllPay.setFont(font)
+        self.label_AllPay.setStyleSheet("font: 700 13pt \"Nirmala UI\";\n"
 "color : #8e9297;")
         self.label_AllPay.setObjectName("label_AllPay")
         self.verticalLayout_3.addWidget(self.label_AllPay)
@@ -420,21 +430,28 @@ class Ui_Dialog(object):
         self.RB_Auent = QtWidgets.QRadioButton(Dialog)
         self.RB_Auent.setGeometry(QtCore.QRect(20, 60, 201, 40))
         font = QtGui.QFont()
-        font.setPointSize(15)
+        font.setPointSize(13)
         font.setBold(True)
         self.RB_Auent.setFont(font)
-        self.RB_Auent.setStyleSheet("color : #8e9297;")
+        self.RB_Auent.setStyleSheet("\n"
+"QRadioButton{ \n"
+"color: red;\n"
+"color : #8e9297;\n"
+"border-color: #36393f;\n"
+"}\n"
+"")
+        self.RB_Auent.setChecked(True)
         self.RB_Auent.setObjectName("RB_Auent")
         self.RB_dif = QtWidgets.QRadioButton(Dialog)
         self.RB_dif.setGeometry(QtCore.QRect(20, 100, 301, 40))
         font = QtGui.QFont()
-        font.setPointSize(15)
+        font.setPointSize(13)
         font.setBold(True)
         self.RB_dif.setFont(font)
         self.RB_dif.setStyleSheet("color : #8e9297;")
         self.RB_dif.setObjectName("RB_dif")
         self.comboBox = QtWidgets.QComboBox(Dialog)
-        self.comboBox.setGeometry(QtCore.QRect(545, 340, 91, 30))
+        self.comboBox.setGeometry(QtCore.QRect(545, 340, 121, 30))
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
@@ -460,7 +477,7 @@ class Ui_Dialog(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.label = QtWidgets.QLabel(Dialog)
-        self.label.setGeometry(QtCore.QRect(20, 10, 301, 61))
+        self.label.setGeometry(QtCore.QRect(20, 10, 381, 61))
         font = QtGui.QFont()
         font.setPointSize(15)
         font.setBold(True)
@@ -485,8 +502,8 @@ class Ui_Dialog(object):
         self.label_AllPay.setText(_translate("Dialog", "Начислено процентов"))
         self.RB_Auent.setText(_translate("Dialog", "Аннуитетные"))
         self.RB_dif.setText(_translate("Dialog", "Дифференцированные"))
-        self.comboBox.setItemText(0, _translate("Dialog", "Месяцев"))
-        self.comboBox.setItemText(1, _translate("Dialog", "Лет"))
+        self.comboBox.setItemText(0, _translate("Dialog", "Лет"))
+        self.comboBox.setItemText(1, _translate("Dialog", "Месяцев"))
         self.label.setText(_translate("Dialog", "Тип ежемесячных платежей"))
 
 
