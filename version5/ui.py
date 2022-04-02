@@ -28,7 +28,8 @@ class Ui_Dialog(object):
         sizePolicy.setHeightForWidth(self.raschet.sizePolicy().hasHeightForWidth())
         self.raschet.setSizePolicy(sizePolicy)
         self.raschet.setStyleSheet("font: 14pt \"Nirmala UI\";\n"
-" background: #B0AEB1")
+"background: #B0AEB1;\n"
+"color : #36393f")
         self.raschet.setObjectName("raschet")
         self.verticalLayoutWidget = QtWidgets.QWidget(Dialog)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(290, 150, 251, 351))
@@ -328,7 +329,8 @@ class Ui_Dialog(object):
         sizePolicy.setHeightForWidth(self.grafik.sizePolicy().hasHeightForWidth())
         self.grafik.setSizePolicy(sizePolicy)
         self.grafik.setStyleSheet("font: 14pt \"Nirmala UI\";\n"
-"background: #B0AEB1\n"
+"background: #B0AEB1;\n"
+"color: #36393f;\n"
 "")
         self.grafik.setObjectName("grafik")
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(Dialog)
