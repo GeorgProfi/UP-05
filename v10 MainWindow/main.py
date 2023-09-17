@@ -3,9 +3,20 @@ import matplotlib
 from PyQt5.QtWidgets import *
 from PyQt5 import  QtGui, QtWidgets
 import matplotlib.pyplot as plt
-matplotlib.use('Qt5Agg')
+
 import openpyxl
 from ui import Ui_mainWindow
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.figure import Figure
+matplotlib.use('Qt5Agg')
+
+
+class MplCanvas(FigureCanvas):
+    def __init__(self, parent=None, width=5, height=4, dpi=100):
+        fig = Figure(figsize=(width, height), dpi=dpi)
+        self.axes = fig.add_subplot(111)
+        super(MplCanvas, self).__init__(fig)
+
 
 
 app = QtWidgets.QApplication(sys.argv)
@@ -13,6 +24,12 @@ MainWindow = QtWidgets.QMainWindow()
 ui = Ui_mainWindow()
 ui.setupUi(MainWindow)
 MainWindow.show()
+global canvas
+
+canvas = MplCanvas(width=10, height=10, dpi=100)
+graphic = QtWidgets.QVBoxLayout(ui.widget)
+graphic.addWidget(canvas)
+canvas.draw()
 
 global procentPart, generalPart
 
@@ -218,13 +235,20 @@ def Export ():
 def diagram():
 
     if len(str(ui.allpay.text())) != 0 and len(str(ui.EveryPay.text())) != 0 and len(str(ui.overpay.text())) != 0:
-            vals = [procentPart, generalPart]
-            labels = ["Проценты", "Основная часть кредита"]
-            fig, ax = plt.subplots()
-            fig.set_size_inches(100, 100)
-            ax.pie(vals, labels=labels, autopct='%1.2f%%')
-            ax.axis("equal")
-            plt.show()
+        canvas.axes.cla()
+        #canvas.vals = [procentPart, generalPart]
+        #canvas.labels = ["Проценты", "Основная часть кредита"]
+       # fig, ax = plt.subplots()
+
+        #canvas.fig.set_size_inches(100, 100)
+        #canvas.ax.pie([procentPart, generalPart], labels=["Проценты", "Основная часть кредита"], autopct='%1.2f%%')
+        #canvas.ax.axis("equal")
+
+
+        canvas.axes.pie([procentPart, generalPart], labels=["Проценты", "Основная\n часть кредита"], autopct='%1.2f%%')
+        canvas.draw()
+
+
     else:
         QMessageBox.critical(QWidget(), 'Ошибка!', 'Произведите расчёты!')
 
@@ -269,5 +293,6 @@ ui.Srok.setValidator(ui.IntInputValidation)
 ui.FirstPay.setValidator(ui.IntInputValidation)
 
 ui.procentStav.setMaxLength(4)
+
 #выход
 sys.exit(app.exec_())
