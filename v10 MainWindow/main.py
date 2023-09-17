@@ -13,8 +13,11 @@ matplotlib.use('Qt5Agg')
 
 class MplCanvas(FigureCanvas):
     def __init__(self, parent=None, width=5, height=4, dpi=100):
-        fig = Figure(figsize=(width, height), dpi=dpi)
+        fig = Figure(figsize=(width, height), dpi=dpi , edgecolor='#36393f')
         self.axes = fig.add_subplot(111)
+        fig.patch.set_facecolor('#36393f')
+        self.axes.tick_params(axis='x', colors='#36393f')
+        self.axes.tick_params(axis='y', colors='#36393f')
         super(MplCanvas, self).__init__(fig)
 
 
@@ -245,7 +248,10 @@ def diagram():
         #canvas.ax.axis("equal")
 
 
-        canvas.axes.pie([procentPart, generalPart], labels=["Проценты", "Основная\n часть кредита"], autopct='%1.2f%%')
+        _, texts, autotexts = canvas.axes.pie([procentPart, generalPart], labels=["Проценты", "Основная\n часть кредита"], autopct='%1.2f%%')
+
+        for text in texts:
+            text.set_color('white')
         canvas.draw()
 
 
@@ -266,6 +272,7 @@ ui.comboBox.currentIndexChanged.connect(mounthORage)
 #connect
 ui.BT_Export.clicked.connect(Export)
 ui.BT_raschet.clicked.connect(pressResult)
+ui.BT_raschet.clicked.connect(diagram)
 #ui.raschet.clicked.connect(result)
 ui.BT_diagram.clicked.connect(diagram)
 ui.RB_dif.toggled.connect(VisibleBT)
