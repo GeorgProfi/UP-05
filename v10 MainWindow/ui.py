@@ -9,16 +9,22 @@
 
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from color import *
 
 
 class Ui_mainWindow(object):
+    def __init__(self):
+        self.color = Color()
+        self.centralwidget = None
+        self.layoutWidget = None
+        self.verticalLayout_2 = None
+        self.label_Summa = None
+        self.label_prcent = None
+
     def setupUi(self, mainWindow):
         mainWindow.setObjectName("mainWindow")
         mainWindow.resize(1099, 787)
-        mainWindow.setStyleSheet("background: #36393f;\n"
-"")
-
+        mainWindow.setStyleSheet(f"background: {self.color.gray}")
 
         self.centralwidget = QtWidgets.QWidget(mainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -41,7 +47,7 @@ class Ui_mainWindow(object):
         font.setItalic(False)
         self.label_Summa.setFont(font)
         self.label_Summa.setStyleSheet("font: 700 13pt \"Nirmala UI\";\n"
-"color : #8e9297;")
+                                       f"color : {self.color.aluminium}")
         self.label_Summa.setObjectName("label_Summa")
         self.verticalLayout_2.addWidget(self.label_Summa)
         self.label_prcent = QtWidgets.QLabel(self.layoutWidget)
@@ -57,7 +63,7 @@ class Ui_mainWindow(object):
         font.setItalic(False)
         self.label_prcent.setFont(font)
         self.label_prcent.setStyleSheet("font: 700 13pt \"Nirmala UI\";\n"
-"color : #8e9297;")
+                                        f"color : {self.color.aluminium}")
         self.label_prcent.setObjectName("label_prcent")
         self.verticalLayout_2.addWidget(self.label_prcent)
         self.label_srok = QtWidgets.QLabel(self.layoutWidget)
@@ -73,7 +79,7 @@ class Ui_mainWindow(object):
         font.setItalic(False)
         self.label_srok.setFont(font)
         self.label_srok.setStyleSheet("font: 700 13pt \"Nirmala UI\";\n"
-"color : #8e9297;")
+                                      f"color : {self.color.aluminium}")
         self.label_srok.setObjectName("label_srok")
         self.verticalLayout_2.addWidget(self.label_srok)
         self.label_Firstpay = QtWidgets.QLabel(self.layoutWidget)
@@ -89,7 +95,7 @@ class Ui_mainWindow(object):
         font.setItalic(False)
         self.label_Firstpay.setFont(font)
         self.label_Firstpay.setStyleSheet("font: 700 13pt \"Nirmala UI\";\n"
-"color : #8e9297;")
+                                          f"color : {self.color.aluminium}")
         self.label_Firstpay.setObjectName("label_Firstpay")
         self.verticalLayout_2.addWidget(self.label_Firstpay)
         self.RB_Auent = QtWidgets.QRadioButton(self.centralwidget)
@@ -100,12 +106,12 @@ class Ui_mainWindow(object):
         font.setStyleStrategy(QtGui.QFont.PreferDefault)
         self.RB_Auent.setFont(font)
         self.RB_Auent.setStyleSheet("\n"
-"QRadioButton{ \n"
-"color: red;\n"
-"color : #8e9297;\n"
-"border-color: #36393f;\n"
-"}\n"
-"")
+                                    "QRadioButton{ \n"
+                                    "color: red;\n"
+                                    f"color : {self.color.aluminium}\n"
+                                    f"border-color: {self.color.gray}\n"
+                                    "}\n"
+                                    "")
         self.RB_Auent.setChecked(True)
         self.RB_Auent.setObjectName("RB_Auent")
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.centralwidget)
@@ -116,7 +122,7 @@ class Ui_mainWindow(object):
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.label_everyPay = QtWidgets.QLabel(self.verticalLayoutWidget_2)
         self.label_everyPay.setStyleSheet("font: 700 13pt \"Nirmala UI\";\n"
-"color : #8e9297;")
+                                          f"color : {self.color.aluminium}")
         self.label_everyPay.setObjectName("label_everyPay")
         self.verticalLayout_3.addWidget(self.label_everyPay)
         self.EveryPay = QtWidgets.QLineEdit(self.verticalLayoutWidget_2)
@@ -129,22 +135,22 @@ class Ui_mainWindow(object):
         font.setPointSize(20)
         self.EveryPay.setFont(font)
         self.EveryPay.setStyleSheet("QLineEdit {\n"
-"        border-width: 3px;\n"
-"        border-style: solid;\n"
-"        border-color: #36393f;\n"
-"        color: #fff\n"
-"    }\n"
-"    QLineEdit:focus {\n"
-"        border-color: #36393f;\n"
-"    }\n"
-"\n"
-"")
+                                    "        border-width: 3px;\n"
+                                    "        border-style: solid;\n"
+                                    f"        border-color: {self.color.aluminium}\n"
+                                    f"        color: {self.color.white}\n"
+                                    "    }\n"
+                                    "    QLineEdit:focus {\n"
+                                    f"        border-color: {self.color.aluminium}\n"
+                                    "    }\n"
+                                    "\n"
+                                    "")
         self.EveryPay.setText("")
         self.EveryPay.setObjectName("EveryPay")
         self.verticalLayout_3.addWidget(self.EveryPay)
         self.label_overpay = QtWidgets.QLabel(self.verticalLayoutWidget_2)
         self.label_overpay.setStyleSheet("font: 700 13pt \"Nirmala UI\";\n"
-"color : #8e9297;")
+                                         f"color : {self.color.aluminium}")
         self.label_overpay.setObjectName("label_overpay")
         self.verticalLayout_3.addWidget(self.label_overpay)
         self.overpay = QtWidgets.QLineEdit(self.verticalLayoutWidget_2)
@@ -157,16 +163,16 @@ class Ui_mainWindow(object):
         font.setPointSize(20)
         self.overpay.setFont(font)
         self.overpay.setStyleSheet("QLineEdit {\n"
-"        border-width: 3px;\n"
-"        border-style: solid;\n"
-"        border-color: #36393f;\n"
-"        color: #fff\n"
-"    }\n"
-"    QLineEdit:focus {\n"
-"        border-color: #36393f;\n"
-"    }\n"
-"\n"
-"")
+                                   "        border-width: 3px;\n"
+                                   "        border-style: solid;\n"
+                                   f"        border-color: {self.color.gray}\n"
+                                   f"        color: {self.color.white}\n"
+                                   "    }\n"
+                                   "    QLineEdit:focus {\n"
+                                   f"        border-color: {self.color.gray}\n"
+                                   "    }\n"
+                                   "\n"
+                                   "")
         self.overpay.setObjectName("overpay")
         self.verticalLayout_3.addWidget(self.overpay)
         self.label_AllPay = QtWidgets.QLabel(self.verticalLayoutWidget_2)
@@ -177,7 +183,7 @@ class Ui_mainWindow(object):
         font.setItalic(False)
         self.label_AllPay.setFont(font)
         self.label_AllPay.setStyleSheet("font: 700 13pt \"Nirmala UI\";\n"
-"color : #8e9297;")
+                                        f"color : {self.color.aluminium}")
         self.label_AllPay.setObjectName("label_AllPay")
         self.verticalLayout_3.addWidget(self.label_AllPay)
         self.allpay = QtWidgets.QLineEdit(self.verticalLayoutWidget_2)
@@ -191,16 +197,16 @@ class Ui_mainWindow(object):
         font.setPointSize(20)
         self.allpay.setFont(font)
         self.allpay.setStyleSheet("QLineEdit {\n"
-"        border-width: 3px;\n"
-"        border-style: solid;\n"
-"        border-color: #36393f;\n"
-"        color: #fff\n"
-"    }\n"
-"    QLineEdit:focus {\n"
-"        border-color: #36393f;\n"
-"    }\n"
-"\n"
-"")
+                                  "        border-width: 3px;\n"
+                                  "        border-style: solid;\n"
+                                  f"        border-color: {self.color.gray}\n"
+                                  f"        color: {self.color.white}\n"
+                                  "    }\n"
+                                  "    QLineEdit:focus {\n"
+                                  f"        border-color: {self.color.gray}\n"
+                                  "    }\n"
+                                  "\n"
+                                  "")
         self.allpay.setText("")
         self.allpay.setObjectName("allpay")
         self.verticalLayout_3.addWidget(self.allpay)
@@ -213,29 +219,29 @@ class Ui_mainWindow(object):
         self.comboBox.setFont(font)
         self.comboBox.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
         self.comboBox.setStyleSheet("QComboBox{\n"
-"    border-width: 3px;\n"
-"    border-style: solid;\n"
-"    border-color: #36393f;\n"
-"    color : #66676f;\n"
-"    }\n"
-"\n"
-"QComboBox QAbstractItemView {\n"
-"  color: rgb(142,146,151);    \n"
-"  background-color: #36393f;\n"
-"  padding: 10px;\n"
-"  selection-background-color: rgb(39, 44, 54);\n"
-"}\n"
-"QComboBox::drop-down {\n"
-"     subcontrol-origin: padding;\n"
-"     subcontrol-position: top right;\n"
-"     width: 15px;\n"
-"\n"
-"     border-left-width: 1px;\n"
-"     border-left-color: darkgray;\n"
-"     border-left-style: solid; /* только одна линия */\n"
-"     border-top-right-radius: 3px; /* тот же радиус закругления что и у QComboBox */\n"
-"     border-bottom-right-radius: 3px;\n"
-" }")
+                                    "    border-width: 3px;\n"
+                                    "    border-style: solid;\n"
+                                    f"    border-color: {self.color.gray}\n"
+                                    f"    color : {self.color.gradient_gray}\n"
+                                    "    }\n"
+                                    "\n"
+                                    "QComboBox QAbstractItemView {\n"
+                                    f"  color: {self.color.aluminium};    \n"
+                                    f"  background-color: {self.color.gray}\n"
+                                    "  padding: 10px;\n"
+                                    f"  selection-background-color: {self.color.dark_gray};\n"
+                                    "}\n"
+                                    "QComboBox::drop-down {\n"
+                                    "     subcontrol-origin: padding;\n"
+                                    "     subcontrol-position: top right;\n"
+                                    "     width: 15px;\n"
+                                    "\n"
+                                    "     border-left-width: 1px;\n"
+                                    "     border-left-color: darkgray;\n"
+                                    "     border-left-style: solid; /* только одна линия */\n"
+                                    "     border-top-right-radius: 3px; /* тот же радиус закругления что и у QComboBox */\n"
+                                    "     border-bottom-right-radius: 3px;\n"
+                                    " }")
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
@@ -247,9 +253,9 @@ class Ui_mainWindow(object):
         sizePolicy.setHeightForWidth(self.BT_Export.sizePolicy().hasHeightForWidth())
         self.BT_Export.setSizePolicy(sizePolicy)
         self.BT_Export.setStyleSheet("font: 14pt \"Nirmala UI\";\n"
-"background: #B0AEB1;\n"
-"color: #36393f;\n"
-"")
+                                     "background: #B0AEB1;\n"
+                                     f"color: {self.color.gray}\n"
+                                     "")
         self.BT_Export.setObjectName("BT_Export")
         self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(290, 150, 251, 351))
@@ -268,44 +274,44 @@ class Ui_mainWindow(object):
         font.setStyleStrategy(QtGui.QFont.PreferDefault)
         self.summa.setFont(font)
         self.summa.setStyleSheet("QLineEdit {\n"
-"        border-width: 3px;\n"
-"        border-style: solid;\n"
-"        border-color: #36393f;\n"
-"        color: #fff\n"
-"    }\n"
-"    QLineEdit:focus {\n"
-"        border-color: #36393f;\n"
-"    }\n"
-"\n"
-"")
+                                 "        border-width: 3px;\n"
+                                 "        border-style: solid;\n"
+                                 f"        border-color: {self.color.gray}\n"
+                                 f"        color: {self.color.white}\n"
+                                 "    }\n"
+                                 "    QLineEdit:focus {\n"
+                                 f"        border-color: {self.color.gray}\n"
+                                 "    }\n"
+                                 "\n"
+                                 "")
         self.summa.setInputMask("")
         self.summa.setMaxLength(11)
         self.summa.setObjectName("summa")
         self.verticalLayout.addWidget(self.summa)
         self.horizontalSlider_summa = QtWidgets.QSlider(self.verticalLayoutWidget)
         self.horizontalSlider_summa.setStyleSheet("QSlider{\n"
-"                background: #36393f;\n"
-"            }\n"
-"            QSlider::groove:horizontal {  \n"
-"                height: 10px;\n"
-"                margin: 0px;\n"
-"                border-radius: 5px;\n"
-"                background: #a5a6a5;\n"
-"            }\n"
-"            QSlider::handle:horizontal {\n"
-"                background: #fff;\n"
-"                border: 1px solid #E3DEE2;\n"
-"                width: 17px;\n"
-"                margin: -5px 0; \n"
-"                border-radius: 8px;\n"
-"            }\n"
-"            QSlider::sub-page:qlineargradient {\n"
-"                background: #fff;\n"
-"                border-radius: 5px;\n"
-"            }\n"
-"\n"
-"\n"
-"")
+                                                  f"                background: {self.color.gray}\n"
+                                                  "            }\n"
+                                                  "            QSlider::groove:horizontal {  \n"
+                                                  "                height: 10px;\n"
+                                                  "                margin: 0px;\n"
+                                                  "                border-radius: 5px;\n"
+                                                  f"                background: {self.color.light_gray}\n"
+                                                  "            }\n"
+                                                  "            QSlider::handle:horizontal {\n"
+                                                  f"                background: {self.color.white}\n"
+                                                  f"                border: 1px solid {self.color.white_milky}\n"
+                                                  "                width: 17px;\n"
+                                                  "                margin: -5px 0; \n"
+                                                  "                border-radius: 8px;\n"
+                                                  "            }\n"
+                                                  "            QSlider::sub-page:qlineargradient {\n"
+                                                  f"                background: {self.color.white}\n"
+                                                  "                border-radius: 5px;\n"
+                                                  "            }\n"
+                                                  "\n"
+                                                  "\n"
+                                                  "")
         self.horizontalSlider_summa.setMaximum(200)
         self.horizontalSlider_summa.setSingleStep(1)
         self.horizontalSlider_summa.setPageStep(1)
@@ -323,16 +329,16 @@ class Ui_mainWindow(object):
         font.setPointSize(20)
         self.procentStav.setFont(font)
         self.procentStav.setStyleSheet("QLineEdit {\n"
-"        border-width: 3px;\n"
-"        border-style: solid;\n"
-"        border-color: #36393f;\n"
-"        color: #fff\n"
-"    }\n"
-"    QLineEdit:focus {\n"
-"        border-color: #36393f;\n"
-"    }\n"
-"\n"
-"")
+                                       "        border-width: 3px;\n"
+                                       "        border-style: solid;\n"
+                                       f"        border-color: {self.color.gray}\n"
+                                       f"        color: {self.color.white}\n"
+                                       "    }\n"
+                                       "    QLineEdit:focus {\n"
+                                       f"        border-color: {self.color.gray}\n"
+                                       "    }\n"
+                                       "\n"
+                                       "")
         self.procentStav.setInputMask("")
         self.procentStav.setText("")
         self.procentStav.setMaxLength(4)
@@ -342,25 +348,25 @@ class Ui_mainWindow(object):
         self.verticalLayout.addWidget(self.procentStav)
         self.horizontalSlider_stav = QtWidgets.QSlider(self.verticalLayoutWidget)
         self.horizontalSlider_stav.setStyleSheet("QSlider{\n"
-"                background: #36393f;\n"
-"            }\n"
-"            QSlider::groove:horizontal {  \n"
-"                height: 10px;\n"
-"                margin: 0px;\n"
-"                border-radius: 5px;\n"
-"                background: #B0AEB1;\n"
-"            }\n"
-"            QSlider::handle:horizontal {\n"
-"                background: #fff;\n"
-"                border: 1px solid #E3DEE2;\n"
-"                width: 17px;\n"
-"                margin: -5px 0; \n"
-"                border-radius: 8px;\n"
-"            }\n"
-"            QSlider::sub-page:qlineargradient {\n"
-"                background: #fff;\n"
-"                border-radius: 5px;\n"
-"            }")
+                                                 f"                background: {self.color.gray}\n"
+                                                 "            }\n"
+                                                 "            QSlider::groove:horizontal {  \n"
+                                                 "                height: 10px;\n"
+                                                 "                margin: 0px;\n"
+                                                 "                border-radius: 5px;\n"
+                                                 f"                background: {self.color.gray_shade_magenta}\n"
+                                                 "            }\n"
+                                                 "            QSlider::handle:horizontal {\n"
+                                                 f"                background: {self.color.white}\n"
+                                                 f"                border: 1px solid {self.color.white_milky}\n"
+                                                 "                width: 17px;\n"
+                                                 "                margin: -5px 0; \n"
+                                                 "                border-radius: 8px;\n"
+                                                 "            }\n"
+                                                 "            QSlider::sub-page:qlineargradient {\n"
+                                                 f"                background: {self.color.white}\n"
+                                                 "                border-radius: 5px;\n"
+                                                 "            }")
         self.horizontalSlider_stav.setMaximum(30)
         self.horizontalSlider_stav.setSingleStep(1)
         self.horizontalSlider_stav.setPageStep(1)
@@ -377,16 +383,16 @@ class Ui_mainWindow(object):
         font.setPointSize(20)
         self.Srok.setFont(font)
         self.Srok.setStyleSheet("QLineEdit {\n"
-"        border-width: 3px;\n"
-"        border-style: solid;\n"
-"        border-color: #36393f;\n"
-"        color: #fff\n"
-"    }\n"
-"    QLineEdit:focus {\n"
-"        border-color: #36393f;\n"
-"    }\n"
-"\n"
-"")
+                                "        border-width: 3px;\n"
+                                "        border-style: solid;\n"
+                                f"        border-color: {self.color.gray}\n"
+                                f"        color: {self.color.white}\n"
+                                "    }\n"
+                                "    QLineEdit:focus {\n"
+                                f"        border-color: {self.color.gray}\n"
+                                "    }\n"
+                                "\n"
+                                "")
         self.Srok.setMaxLength(11)
         self.Srok.setObjectName("Srok")
         self.verticalLayout.addWidget(self.Srok)
@@ -397,25 +403,25 @@ class Ui_mainWindow(object):
         sizePolicy.setHeightForWidth(self.horizontalSlider_srok.sizePolicy().hasHeightForWidth())
         self.horizontalSlider_srok.setSizePolicy(sizePolicy)
         self.horizontalSlider_srok.setStyleSheet("QSlider{\n"
-"                background: #36393f;\n"
-"            }\n"
-"            QSlider::groove:horizontal {  \n"
-"                height: 10px;\n"
-"                margin: 0px;\n"
-"                border-radius: 5px;\n"
-"                background: #B0AEB1;\n"
-"            }\n"
-"            QSlider::handle:horizontal {\n"
-"                background: #fff;\n"
-"                border: 1px solid #E3DEE2;\n"
-"                width: 17px;\n"
-"                margin: -5px 0; \n"
-"                border-radius: 8px;\n"
-"            }\n"
-"            QSlider::sub-page:qlineargradient {\n"
-"                background: #fff;\n"
-"                border-radius: 5px;\n"
-"            }")
+                                                 f"                background: {self.color.gray}\n"
+                                                 "            }\n"
+                                                 "            QSlider::groove:horizontal {  \n"
+                                                 "                height: 10px;\n"
+                                                 "                margin: 0px;\n"
+                                                 "                border-radius: 5px;\n"
+                                                 f"                background: {self.color.gray_shade_magenta}\n"
+                                                 "            }\n"
+                                                 "            QSlider::handle:horizontal {\n"
+                                                 f"                background: {self.color.white}\n"
+                                                 f"                border: 1px solid {self.color.white_milky}\n"
+                                                 "                width: 17px;\n"
+                                                 "                margin: -5px 0; \n"
+                                                 "                border-radius: 8px;\n"
+                                                 "            }\n"
+                                                 "            QSlider::sub-page:qlineargradient {\n"
+                                                 "                background: #fff;\n"
+                                                 "                border-radius: 5px;\n"
+                                                 "            }")
         self.horizontalSlider_srok.setMaximum(30)
         self.horizontalSlider_srok.setSingleStep(1)
         self.horizontalSlider_srok.setPageStep(1)
@@ -432,16 +438,16 @@ class Ui_mainWindow(object):
         font.setPointSize(20)
         self.FirstPay.setFont(font)
         self.FirstPay.setStyleSheet("QLineEdit {\n"
-"        border-width: 3px;\n"
-"        border-style: solid;\n"
-"        border-color: #36393f;\n"
-"        color: #fff\n"
-"    }\n"
-"    QLineEdit:focus {\n"
-"        border-color: #36393f;\n"
-"    }\n"
-"\n"
-"")
+                                    "        border-width: 3px;\n"
+                                    "        border-style: solid;\n"
+                                    f"        border-color: {self.color.gray}\n"
+                                    f"        color: {self.color.white}\n"
+                                    "    }\n"
+                                    "    QLineEdit:focus {\n"
+                                    f"        border-color: {self.color.gray}\n"
+                                    "    }\n"
+                                    "\n"
+                                    "")
         self.FirstPay.setMaxLength(11)
         self.FirstPay.setObjectName("FirstPay")
         self.verticalLayout.addWidget(self.FirstPay)
@@ -449,25 +455,25 @@ class Ui_mainWindow(object):
         self.horizontalSlider_firstpay.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.horizontalSlider_firstpay.setAutoFillBackground(False)
         self.horizontalSlider_firstpay.setStyleSheet("QSlider{\n"
-"               background: #36393f;\n"
-"            }\n"
-"            QSlider::groove:horizontal {  \n"
-"                height: 10px;\n"
-"                margin: 0px;\n"
-"                border-radius: 5px;\n"
-"                background: #B0AEB1;\n"
-"            }\n"
-"            QSlider::handle:horizontal {\n"
-"                background: #fff;\n"
-"                border: 1px solid #E3DEE2;\n"
-"                width: 17px;\n"
-"                margin: -5px 0; \n"
-"                border-radius: 8px;\n"
-"            }\n"
-"            QSlider::sub-page:qlineargradient {\n"
-"                background: #fff;\n"
-"                border-radius: 5px;\n"
-"            }")
+                                                     f"               background: {self.color.gray}\n"
+                                                     "            }\n"
+                                                     "            QSlider::groove:horizontal {  \n"
+                                                     "                height: 10px;\n"
+                                                     "                margin: 0px;\n"
+                                                     "                border-radius: 5px;\n"
+                                                     f"                background: {self.color.gray_shade_magenta}\n"
+                                                     "            }\n"
+                                                     "            QSlider::handle:horizontal {\n"
+                                                     "                background: #fff;\n"
+                                                     f"                border: 1px solid {self.color.gray_shade_magenta}\n"
+                                                     "                width: 17px;\n"
+                                                     "                margin: -5px 0; \n"
+                                                     "                border-radius: 8px;\n"
+                                                     "            }\n"
+                                                     "            QSlider::sub-page:qlineargradient {\n"
+                                                     "                background: #fff;\n"
+                                                     "                border-radius: 5px;\n"
+                                                     "            }")
         self.horizontalSlider_firstpay.setInputMethodHints(QtCore.Qt.ImhNone)
         self.horizontalSlider_firstpay.setMaximum(200)
         self.horizontalSlider_firstpay.setSingleStep(1)
@@ -483,7 +489,7 @@ class Ui_mainWindow(object):
         font.setBold(True)
         font.setStyleStrategy(QtGui.QFont.PreferDefault)
         self.label_Type_Pay.setFont(font)
-        self.label_Type_Pay.setStyleSheet("color : #8e9297;")
+        self.label_Type_Pay.setStyleSheet(f"color : {self.color.aluminium}")
         self.label_Type_Pay.setObjectName("label_Type_Pay")
         self.gridLayoutWidget = QtWidgets.QWidget(self.centralwidget)
         self.gridLayoutWidget.setGeometry(QtCore.QRect(290, 550, 251, 71))
@@ -498,9 +504,9 @@ class Ui_mainWindow(object):
         sizePolicy.setHeightForWidth(self.BT_diagram.sizePolicy().hasHeightForWidth())
         self.BT_diagram.setSizePolicy(sizePolicy)
         self.BT_diagram.setStyleSheet("font: 14pt \"Nirmala UI\";\n"
-"background: #B0AEB1;\n"
-"color: #36393f;\n"
-"")
+                                      f"background: {self.color.gray_shade_magenta}\n"
+                                      f"color: {self.color.gray}\n"
+                                      "")
         self.BT_diagram.setObjectName("BT_diagram")
         self.gridLayout.addWidget(self.BT_diagram, 1, 1, 1, 1)
         self.BT_raschet = QtWidgets.QPushButton(self.gridLayoutWidget)
@@ -510,8 +516,8 @@ class Ui_mainWindow(object):
         sizePolicy.setHeightForWidth(self.BT_raschet.sizePolicy().hasHeightForWidth())
         self.BT_raschet.setSizePolicy(sizePolicy)
         self.BT_raschet.setStyleSheet("font: 14pt \"Nirmala UI\";\n"
-"background: #B0AEB1;\n"
-"color : #36393f")
+                                      f"background: {self.color.gray_shade_magenta}\n"
+                                      f"color : {self.color.gray}")
         self.BT_raschet.setObjectName("BT_raschet")
         self.gridLayout.addWidget(self.BT_raschet, 1, 0, 1, 1)
         self.RB_dif = QtWidgets.QRadioButton(self.centralwidget)
@@ -521,7 +527,7 @@ class Ui_mainWindow(object):
         font.setBold(True)
         font.setStyleStrategy(QtGui.QFont.PreferDefault)
         self.RB_dif.setFont(font)
-        self.RB_dif.setStyleSheet("color : #8e9297;")
+        self.RB_dif.setStyleSheet(f"color : {self.color.aluminium}")
         self.RB_dif.setObjectName("RB_dif")
         mainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(mainWindow)
@@ -532,18 +538,12 @@ class Ui_mainWindow(object):
         self.statusbar.setObjectName("statusbar")
         mainWindow.setStatusBar(self.statusbar)
 
-
-
         self.widget = QtWidgets.QWidget(self.centralwidget)
         self.widget.setGeometry(QtCore.QRect(650, 450, 450, 300))
         self.widget.setObjectName("widget")
 
-
         self.retranslateUi(mainWindow)
         QtCore.QMetaObject.connectSlotsByName(mainWindow)
-
-
-
 
     def retranslateUi(self, mainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -567,6 +567,7 @@ class Ui_mainWindow(object):
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     mainWindow = QtWidgets.QMainWindow()
     ui = Ui_mainWindow()
