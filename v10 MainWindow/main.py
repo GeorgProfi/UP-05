@@ -1,18 +1,20 @@
 import sys
 import matplotlib
 from PyQt5.QtWidgets import *
-from PyQt5 import  QtGui, QtWidgets
+from PyQt5 import QtGui, QtWidgets
 import matplotlib.pyplot as plt
-
 import openpyxl
+from color import *
 from ui import Ui_mainWindow
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 matplotlib.use('Qt5Agg')
 
 
+
 class MplCanvas(FigureCanvas):
     def __init__(self, parent=None, width=5, height=4, dpi=100):
+        self.color = Color()
         fig = Figure(figsize=(width, height), dpi=dpi , edgecolor='#36393f')
         self.axes = fig.add_subplot(111)
         fig.patch.set_facecolor('#36393f')
@@ -105,7 +107,7 @@ def result():
     srok = float(ui.Srok.text()) * month_OR_year
     print(srok)
 
-    if procent<=100 :
+    if procent <= 100:
         Ostatok = summa - FirstPay
         everyMS = procent / 12 / 100
         generalStav = (1 + everyMS) ** srok
